@@ -167,9 +167,9 @@ main {
   cursor: pointer;
 }
 
-.modal-btn:hover {
+.modal-btn:hover { /*incomprie pourquoi crée "btn-signup modal-btn" et pas juste "btn-signup" ou "modal-btn"*/
   background: #3876ac;
-}/* incomprie pourquoi crée 2 btn alors qu'un seul modifié selon l'écran suffit ? */
+}/* incomprie pourquoi crée 2  */
 
 /* Partie formulaire d'inscription */
 
@@ -188,11 +188,11 @@ main {
   background: #3876ac;
 }
 
-/*.smFont {
+.smFont {
   font-size: 16px;
-}*/
+}
 
-.bground { /*Background lors de l'ouverture du formulaire*/
+.bground {
   display: none;
   position: fixed;
   z-index: 1;
@@ -203,7 +203,7 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
-
+//* formulaire*//
 .content {
   margin: 5% auto;
   width: 100%;
@@ -243,7 +243,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after { 
+.formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -261,28 +261,19 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-
+/* 
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
     color: red;
-} 
-
-input::placeholder {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-/*Position des Checkbox*/
-.checkbox-label, 
+} */
+.checkbox-label,
 .checkbox2-label {
   position: relative;
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
 }
-
-/*Création contour icon Checkbox*/
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
   display: block;
@@ -297,7 +288,6 @@ input::placeholder {
   top: -1px;
   transition: 0.3s;
 }
-/*Création icon Checkbox After */
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
   content: "";
@@ -314,27 +304,21 @@ input::placeholder {
   transition: 0.3s;
   opacity: 0;
 }
-
 .checkbox-input {
   display: none;
 }
-/*Incomprie Obligé d'indiqué "checkbox-input:checked"? je ne comprend pas non plus pourquoi une seul checkbox-label puis imput dans le html */
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
 }
-
-/*Incomprie ? */
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: #279e7a;
 }
-/*Checkbox Carré AR plan  */
 .checkbox2-label .checkbox-icon {
   border-radius: 4px;
   border: 0;
   background: #c4c4c4;
 }
-/*Checkbox Carré After  */
 .checkbox2-label .checkbox-icon::after {
   width: 7px;
   height: 4px;
@@ -347,8 +331,6 @@ input::placeholder {
   left: 21%;
   top: 19%;
 }
-
-/*Incomprie fermeture du formulaire*/
 .close {
   position: absolute;
   right: 15px;
@@ -401,7 +383,7 @@ input::placeholder {
   background-color: #fff;
 }
 
-/*incomprie Style the arrow inside the select element: */
+/* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
   content: "";
@@ -416,7 +398,7 @@ input::placeholder {
   border-radius: 5px 0 5px 0;
 }
 
-/* incomprie Point the arrow upwards when the select box is open (active): */
+/* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
   transform: rotate(135deg);
   top: 13px;
@@ -484,36 +466,29 @@ input::placeholder {
   right: -80px;
   top: 0;
 }
-
-/* partie titre + texte de présentation & @media screen */
-
 .hero-content > * {
   position: relative;
   z-index: 1;
 }
 .hero-headline {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
 }
 .hero-text {
-  width: 170%;
+  width: 146%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
 }
-
-/* bouton inscription */
 .btn-signup {
   outline: none;
-  /*text-transform: capitalize;*/ /* permet de supprimer la majuscule du M de "Je m'inscris" */
+  text-transform: capitalize;
   font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
 }
-
-/* Correspond à l'image de la page d'accueil */
 .hero-img {
   grid-column: span 8;
 }
@@ -522,7 +497,6 @@ input::placeholder {
   height: 100%;
   display: block;
   padding: 0;
-  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -539,8 +513,6 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-
-/* Ce qui s'applique sur tablette et mobile */
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -550,9 +522,7 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
-    min-width: 100%;
   }
-  /* Incomprie jz n'arrive pas aller jusqu'a after  */
   .hero-content::after {
     content: unset;
   }
@@ -564,13 +534,12 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: 100%;
+    width: unset;
     font-size: 1.5rem;
   }
   .hero-img img {
     border-radius: 10px;
-    margin-top: 20px;
-    object-fit: cover;
+    margin-top: 40px;
   }
   .hero-section > .btn-signup {
     display: block;
@@ -578,7 +547,7 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 5px;
+    margin-top: 50px;
     text-align: center;
   }
 }
@@ -587,59 +556,6 @@ footer {
   margin: 20px;
   padding: 10px;
   font-family: var(--font-slab);
-}
-.header-logo img {
-  width: 150px;
-}
-
-@media screen and (max-width: 667px) {
-
-  .hero-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
-  }
-
-  .hero-headline {
-    text-align: center;
-    font-size: 1.25em;
-    font-weight: bolder;
-    margin-bottom: -30px;
-  }
-
-  .hero-text {
-    font-size: 0.65em;
-    text-align: justify;
-  }
-}
-
-.error {
-  color: red;
-  font-size : 0.8rem;
-  margin-top : 10px;
-
-}
-
-/* Partie tablette */
-@media screen and (min-width: 670px) and (max-width: 800px) {
-  .hero-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
-  }
-
-  .hero-headline {
-    font-size: 2.5em;
-    font-weight: bolder;
-    text-align: center;
-    margin-bottom: -30px;
-  }
-
-  .hero-text {
-    width: 100%;
-    font-size: 1.15em;
-    text-align: justify;
-  }
 }
 
 @keyframes modalopen {
