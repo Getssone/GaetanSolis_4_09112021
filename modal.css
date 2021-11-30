@@ -215,7 +215,6 @@ main {
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding-top: 10px;
 }
 
 .modal-body {
@@ -618,6 +617,18 @@ footer {
   font-size : 0.8rem;
   margin-top : 10px;
 
+}
+
+#btn-closed {
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
 }
 
 /* Partie tablette */

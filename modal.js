@@ -60,27 +60,18 @@ function launchModal() {
 // ---- Close Modal Form ---------
 
 closeModalBtn.addEventListener("click", closeModal);
-console.log(closeModalBtn.length)
+
 
 function closeModal() {
   modalbg.style.display = 'none';
 }
 
 // ------------ Envoi du formulaire d'inscription ------------------
-const tableauValidation = '';
 
-function validate(e) {
-  e.preventDefault()
-  validateFirstName()
-  validateLastName()
-  validateEmail()
-  validateBirthdate()
-  validateEventParticipation()
-  validateEventCity()
-  validateCgu()
-  console.log (tableauValidation)
-  }
-
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  validate();
+});
 // ------------------- validation du formulaire lors de l'input -----------
 
 function validateFirstName() {
@@ -97,6 +88,7 @@ function validateFirstName() {
 }
 
 function validateLastName() {
+  console.log(lastName.value.trim.length)
   if (lastName.value.toString().trim().length< 2) {
       errorLastName.style.display = 'inline';
       errorLastName.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du Nom.";
@@ -109,7 +101,7 @@ function validateLastName() {
   }
 }
 function validateEmail() {
-  
+  console.log(eMail.value.trim.length)
   
   if (!/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(eMail.value))  {       
     eMail.placeholder = "Your email"
@@ -124,6 +116,7 @@ function validateEmail() {
   }
 }
 function validateBirthdate() {
+  console.log(birthDate.value.trim.length)
   if (!birthDate.value.match(/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/)) { 
       errorBirthDate.style.display = "inline";
       errorBirthDate.innerText = "Veuillez indiquer votre date de naissance.";
@@ -137,6 +130,7 @@ function validateBirthdate() {
 }
 
 function validateEventParticipation() {
+  console.log(eventParticipation.value.trim.length)
   if (!eventParticipation.value.match(numbersValue)) {
       errorEventParticipation.style.display = "inline";
       errorEventParticipation.innerText = "Veuillez indiquer un nombre de participation à nos tournois."
@@ -148,7 +142,8 @@ function validateEventParticipation() {
       return true;
   };
 }
-function validateEventCity(eventCity) {
+function validateEventCity() {
+  console.log(eventCity.value)
     let eventCityChecked = false;
   eventCity.forEach(city => {
     if (city.checked)
@@ -157,7 +152,7 @@ function validateEventCity(eventCity) {
     
     if (eventCityChecked) {
           errorEventCity.style.display = "inline";
-          errorEventCity.innerText = "Veuillez choisir une ou plusieurs ville(s).";
+          errorEventCity.innerText = "Veuillez choisir une ville.";
           return false;
       } else {
           errorEventCity.style.display = 'none';
@@ -165,7 +160,8 @@ function validateEventCity(eventCity) {
       };
   }
   
-function validateCgu(cgu) {
+function validateCgu() {
+  console.log(cgu.length)
   if (cgu.checked == false) { 
       errorCgu.style.display = "inline";
       errorCgu.innerText = "Vous devez accepter les termes et conditions.";
@@ -175,6 +171,26 @@ function validateCgu(cgu) {
       return true;
   }; 
 }
+function validate() {
+    let isFormValidate = [];
+  
+    isFormValidate.push(validateFirstName());
+    isFormValidate.push(validateLastName());
+    isFormValidate.push(validateEmail());
+    isFormValidate.push(validateBirthdate());
+    isFormValidate.push(validateEventParticipation());
+    isFormValidate.push(validateEventCity());
+    isFormValidate.push(validateCgu());
+  
+    if (!isFormValidate.includes(false)) {
+        form.style.display = 'none';
+        confirmationValidation.style.display = 'flex';
+    }
+  }
+  
+// ------- Fermer le formulaire avec le message de validation ---------
+
+document.querySelector("#btn-closed").addEventListener("click", closeModal);
 // -------------------- Ancienne version Validation du formulaire ----------------------
 /*
 // DOM Elements
