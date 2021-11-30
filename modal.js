@@ -147,10 +147,10 @@ function validateEventCity() {
     let eventCityChecked = false;
   eventCity.forEach(city => {
     if (city.checked)
-    {eventCityChecked = true}
+    {eventCityChecked = true;}
   })
     
-    if (eventCityChecked) {
+    if (eventCityChecked === false) {
           errorEventCity.style.display = "inline";
           errorEventCity.innerText = "Veuillez choisir une ville.";
           return false;
