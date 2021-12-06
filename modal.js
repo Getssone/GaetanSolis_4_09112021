@@ -38,13 +38,13 @@ const form = document.querySelector('form')
 // --------- gestion du menu hambuger  ------------
 menuResponsive.addEventListener('click', editNav); // récupération  onClick= editNav
 
-function editNav(event) { 
-    event.preventDefault();
-    if (topNav.className === "topnav") { // element.className nous pemret de modifié la valeur de l'attribut class
-        topNav.className += " responsive";
-    } else {
-        topNav.className = "topnav";
-    }
+function editNav(event) {
+  event.preventDefault();
+  if (topNav.className === "topnav") { // element.className nous pemret de modifié la valeur de l'attribut class
+    topNav.className += " responsive";
+  } else {
+    topNav.className = "topnav";
+  }
 }
 
 // ---------- Launch Modal Form ---------
@@ -55,6 +55,8 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = 'block';
   confirmationValidation.style.display = 'none';
+  form.style.display =  "block"
+console.log("coucou c'est partie")
 }
 
 // ---- Close Modal Form ---------
@@ -76,118 +78,118 @@ form.addEventListener('submit', function (e) {
 
 function validateFirstName() {
   console.log(firstName.value.trim.length)
-  if (firstName.value.trim().length<2) { /* Changer les valeur en string et enlever les espace AV/AR  first superieur a deux */ 
-      errorFirstName.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
-      firstName.style.border = 'solid red 2px';
-      return false;
+  if (firstName.value.trim().length < 2) { /* enleve les espace AV/AR  first superieur a deux */ 
+    errorFirstName.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
+    firstName.style.border = 'solid red 2px';
+    return false;
   } else {
-      errorFirstName.innerText = "";
-      firstName.style.border = 'solid #279e7a 3px';
-      return true; 
+    errorFirstName.innerText = "";
+    firstName.style.border = 'solid #279e7a 3px';
+    return true;
   };
 }
 
 function validateLastName() {
   console.log(lastName.value.trim.length)
-  if (lastName.value.toString().trim().length< 2) {
-      errorLastName.style.display = 'inline';
-      errorLastName.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du Nom.";
-      lastName.style.border = 'solid red 2px';
-      return false;
+  if (lastName.value.toString().trim().length < 2) {
+    errorLastName.style.display = 'inline';
+    errorLastName.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du Nom.";
+    lastName.style.border = 'solid red 2px';
+    return false;
   } else {
-      errorLastName.style.display = 'none';
-      lastName.style.border = 'solid #279e7a 3px';
-      return true;
+    errorLastName.style.display = 'none';
+    lastName.style.border = 'solid #279e7a 3px';
+    return true;
   }
 }
 function validateEmail() {
   console.log(eMail.value.trim.length)
-  
-  if (!/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(eMail.value))  {       
+
+  if (!/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(eMail.value)) {
     eMail.placeholder = "Your email"
-      errorMail.style.display = "inline"
-      errorMail.innerText = "Veuillez entrer une adresse mail valide.";
-      eMail.style.border = 'solid red 2px';
-      return false;
+    errorMail.style.display = "inline"
+    errorMail.innerText = "Veuillez entrer une adresse mail valide.";
+    eMail.style.border = 'solid red 2px';
+    return false;
   } else {
-      errorMail.style.display = 'none';
-      eMail.style.border = 'solid #279e7a 3px';
-      return true;
+    errorMail.style.display = 'none';
+    eMail.style.border = 'solid #279e7a 3px';
+    return true;
   }
 }
 function validateBirthdate() {
   console.log(birthDate.value.trim.length)
-  if (!birthDate.value.match(/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/)) { 
-      errorBirthDate.style.display = "inline";
-      errorBirthDate.innerText = "Veuillez indiquer votre date de naissance.";
-      birthDate.style.border = 'solid red 2px';
-      return false;
+  if (!birthDate.value.match(/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/)) {
+    errorBirthDate.style.display = "inline";
+    errorBirthDate.innerText = "Veuillez indiquer votre date de naissance.";
+    birthDate.style.border = 'solid red 2px';
+    return false;
   } else {
-      errorBirthDate.style.display = 'none';
-      birthDate.style.border = 'solid #279e7a 3px';
-      return true;
+    errorBirthDate.style.display = 'none';
+    birthDate.style.border = 'solid #279e7a 3px';
+    return true;
   };
 }
 
 function validateEventParticipation() {
   console.log(eventParticipation.value.trim.length)
   if (!eventParticipation.value.match(numbersValue)) {
-      errorEventParticipation.style.display = "inline";
-      errorEventParticipation.innerText = "Veuillez indiquer un nombre de participation à nos tournois."
-      eventParticipation.style.border = 'solid red 2px';
-      return false;
+    errorEventParticipation.style.display = "inline";
+    errorEventParticipation.innerText = "Veuillez indiquer un nombre de participation à nos tournois."
+    eventParticipation.style.border = 'solid red 2px';
+    return false;
   } else {
-      errorEventParticipation.style.display = 'none';
-      eventParticipation.style.border = 'solid #279e7a 3px';
-      return true;
+    errorEventParticipation.style.display = 'none';
+    eventParticipation.style.border = 'solid #279e7a 3px';
+    return true;
   };
 }
 function validateEventCity() {
   console.log(eventCity.value)
-    let eventCityChecked = false;
+  let eventCityChecked = false;
   eventCity.forEach(city => {
-    if (city.checked)
-    {eventCityChecked = true;}
+    if (city.checked) { eventCityChecked = true; }
   })
-    
-    if (eventCityChecked === false) {
-          errorEventCity.style.display = "inline";
-          errorEventCity.innerText = "Veuillez choisir une ville.";
-          return false;
-      } else {
-          errorEventCity.style.display = 'none';
-          return true;
-      };
-  }
-  
+
+  if (eventCityChecked === false) {
+    errorEventCity.style.display = "inline";
+    errorEventCity.innerText = "Veuillez choisir une ville.";
+    return false;
+  } else {
+    errorEventCity.style.display = 'none';
+    return true;
+  };
+}
+
 function validateCgu() {
   console.log(cgu.length)
-  if (cgu.checked == false) { 
-      errorCgu.style.display = "inline";
-      errorCgu.innerText = "Vous devez accepter les termes et conditions.";
-      return false;
+  if (cgu.checked == false) {
+    errorCgu.style.display = "inline";
+    errorCgu.innerText = "Vous devez accepter les termes et conditions.";
+    return false;
   } else {
-      errorCgu.style.display = 'none';
-      return true;
-  }; 
+    errorCgu.style.display = 'none';
+    return true;
+  };
 }
 function validate() {
-    let isFormValidate = [];
-  
-    isFormValidate.push(validateFirstName());
-    isFormValidate.push(validateLastName());
-    isFormValidate.push(validateEmail());
-    isFormValidate.push(validateBirthdate());
-    isFormValidate.push(validateEventParticipation());
-    isFormValidate.push(validateEventCity());
-    isFormValidate.push(validateCgu());
-  
-    if (!isFormValidate.includes(false)) {
-        form.style.display = 'none';
-        confirmationValidation.style.display = 'flex';
-    }
+  let isFormValidate = [];
+
+  isFormValidate.push(validateFirstName());
+  isFormValidate.push(validateLastName());
+  isFormValidate.push(validateEmail());
+  isFormValidate.push(validateBirthdate());
+  isFormValidate.push(validateEventParticipation());
+  isFormValidate.push(validateEventCity());
+  isFormValidate.push(validateCgu());
+
+  if (!isFormValidate.includes(false)) {
+    form.style.display = 'none';
+    confirmationValidation.style.display = 'flex';
+    form.reset()
   }
-  
+}
+
 // ------- Fermer le formulaire avec le message de validation ---------
 
 document.querySelector("#btn-closed").addEventListener("click", closeModal);

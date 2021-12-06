@@ -38,12 +38,11 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
-
+  float: left;
 }
 /* correspond au menu nav sur descktop */
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -71,15 +70,17 @@ img {
 
 .topnav .icon {
   display: none;
-}/* correspond au menu hamburger de la partie mobile
+} /* correspond au menu hamburger de la partie mobile
 doit être caché en desktop d'où le display: none */
 
 /* les media screen ci-dessous permettent de gérer l'affichage du menu en version mobile */
 /* menu Descktop enlever lors du mobile*/
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;} 
-  
-/* icon menu hamburger de la partie mobile*/
+  .topnav a {
+    display: none;
+  }
+
+  /* icon menu hamburger de la partie mobile*/
   .topnav a.icon {
     float: right;
     display: block;
@@ -88,11 +89,14 @@ doit être caché en desktop d'où le display: none */
   }
 }
 
-@media screen and (max-width: 768px) { /*incomprie possibilité de simplifié avec c'elle du dessus ?*/
-  
-/* menu hamburger "Active"  la partie mobile deviens responsive via code JS-incomprie*/
-  .topnav.responsive {position: relative;}
-/* Position Icon menu hamburger dans la case de la partie mobile */
+@media screen and (max-width: 768px) {
+  /*incomprie possibilité de simplifié avec c'elle du dessus ?*/
+
+  /* menu hamburger "Active"  la partie mobile deviens responsive via code JS-incomprie*/
+  .topnav.responsive {
+    position: relative;
+  }
+  /* Position Icon menu hamburger dans la case de la partie mobile */
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -101,23 +105,23 @@ doit être caché en desktop d'où le display: none */
   .topnav.responsive a {
     float: none; /* bloque Icon menu <a>*/
     display: block; /* Présente les élément <a>*/
-    text-align: left; 
+    text-align: left;
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right; /*incomprie*/
     display: block;
     align-items: center;
     color: #ff0000;
   }
-} 
+}
 /* Montre la position sur le menu*/
-.topnav a:hover { 
+.topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
@@ -131,13 +135,13 @@ doit être caché en desktop d'où le display: none */
 }
 
 @media screen and (max-width: 540px) {
-.topnav {
-  margin-top: 20px;
-}
+  .topnav {
+    margin-top: 20px;
+  }
 
-.header-logo {
-  margin-left: 15px;
-}
+  .header-logo {
+    margin-left: 15px;
+  }
 }
 
 /* partie formulaire */
@@ -151,8 +155,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -169,10 +171,9 @@ main {
 
 .modal-btn:hover {
   background: #3876ac;
-}/* incomprie pourquoi crée 2 btn alors qu'un seul modifié selon l'écran suffit ? */
+} /* incomprie pourquoi crée 2 btn alors qu'un seul modifié selon l'écran suffit ? */
 
 /* Partie formulaire d'inscription */
-
 
 .button {
   background: #fe142f;
@@ -192,7 +193,8 @@ main {
   font-size: 16px;
 }*/
 
-.bground { /*Background lors de l'ouverture du formulaire*/
+.bground {
+  /*Background lors de l'ouverture du formulaire*/
   display: none;
   position: fixed;
   z-index: 1;
@@ -242,7 +244,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after { 
+.formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -262,10 +264,10 @@ input {
 }
 
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} 
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
 
 input::placeholder {
   font-size: 14px;
@@ -273,7 +275,7 @@ input::placeholder {
 }
 
 /*Position des Checkbox*/
-.checkbox-label, 
+.checkbox-label,
 .checkbox2-label {
   position: relative;
   margin-left: 36px;
@@ -592,7 +594,6 @@ footer {
 }
 
 @media screen and (max-width: 667px) {
-
   .hero-content {
     width: 100%;
     margin: 0 auto;
@@ -614,9 +615,8 @@ footer {
 
 .error {
   color: red;
-  font-size : 0.8rem;
-  margin-top : 10px;
-
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
 #btn-closed {
@@ -662,4 +662,3 @@ footer {
     opacity: 1;
   }
 }
-
