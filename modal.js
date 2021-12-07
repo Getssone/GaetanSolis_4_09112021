@@ -1,4 +1,5 @@
 // DOM Elements
+
 const modalbg = document.querySelector(".bground");// constante permettant de gérer le bground
 const modalBtn = document.querySelectorAll(".modal-btn");// constante permettant au clic sur le btn de faire apparaître le formulaire
 const formData = document.querySelectorAll(".formData");// récupération du formulaire -> FormData permet de créer un ensemble de paires clef-valeur (très utilisé dans les formulaires)
@@ -6,7 +7,6 @@ const closeModalBtn = document.querySelector(".close") // récupération du bout
 const confirmationCloseBtn = document.querySelector("#btn-closed"); // récupération bouton "fermer" aprés le message de remerciement
 const menuResponsive = document.querySelector("#myTopnav .icon") // récupération de l'icon navbar Mobile(myTopnav)
 const topNav = document.querySelector("#myTopnav")// récupération de la navbar Desktop (myTopnav)
-
 
 // ------ element correspondant au bouton --------
 const formValid = document.querySelector(".btn-submit");// récupération du bouton "Validation du formulaire"
@@ -35,8 +35,10 @@ const confirmationValidation = document.querySelector("#confirm-modal");// récu
 // ------------ element pour l'envoi du formulaire ------------------------
 const form = document.querySelector('form')
 
+// --------- Condition / Function  ------------
+
 // --------- gestion du menu hambuger  ------------
-menuResponsive.addEventListener('click', editNav); // récupération  onClick= editNav
+menuResponsive.addEventListener('onclick', editNav); // récupération  onClick= editNav
 
 function editNav(event) {
   event.preventDefault();
